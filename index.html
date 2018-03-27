@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Payment Form</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+</head>
+<body>
+  <main>
+    <section>
+      <div class="header">
+        <div class="header__left">
+          <span>Harold Finch</span><br/>
+          <span>Your total</span>
+        </div>
+        <div class="header__right">
+          <span>$88</span>
+        </div>
+      </div>
+      <div class="payment-form">
+        <form id="payment_form" method="post" action="php/payment.php"> 
+          <label for="credit">Credit card number</label>
+            <input type="text" pattern="[0-9]{12}" maxlength="12" class="payment-form__credit payment-form--field-styles" name="credit" id="credit" placeholder="4321" required>
+          <label for="month">Expiration</label>
+          <div class="payment-form__expiration">
+            <select name="month" id="month" class="payment-form__month payment-form--field-styles" required>
+              <option class="payment-form__option" value="" selected disabled hidden>Month</option>
+              <option class="payment-form__option" value="1">01</option>
+              <option class="payment-form__option" value="2">02</option>
+              <option class="payment-form__option" value="3">03</option>
+              <option class="payment-form__option" value="4">04</option>
+              <option class="payment-form__option" value="5">05</option>
+              <option class="payment-form__option" value="6">06</option>
+              <option class="payment-form__option" value="7">07</option>
+              <option class="payment-form__option" value="8">08</option>
+              <option class="payment-form__option" value="9">09</option>
+              <option class="payment-form__option" value="10">10</option>
+              <option class="payment-form__option" value="11">11</option>
+              <option class="payment-form__option" value="12">12</option>
+            </select>
+            <select name="year" id="year" class="payment-form__year payment-form--field-styles" required>
+              <option class="payment-form__option" value="" selected disabled hidden>Year</option>
+              <option class="payment-form__option" value="2018">2018</option>
+              <option class="payment-form__option" value="2019">2019</option>
+              <option class="payment-form__option" value="2020">2020</option>
+              <option class="payment-form__option" value="2021">2021</option>
+            </select>
+          </div>
+          <label for="cvv">CVV</label>
+          <input type="text" pattern="[0-9]{3,4}" maxlength="4"  class="payment-form__cvv payment-form--field-styles" name="cvv" id="cvv" required>
+          <div class="payment-form__cvv-example">
+            3 or 4 digits - <a href="#">view example</a>
+          </div>
+          <div class="payment-form__hr"></div>
+          <input class="payment-form__submit" type="submit" value="Pay">
+          <div class="payment-form__cancel">
+            <a href="#">Cancel order</a>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
